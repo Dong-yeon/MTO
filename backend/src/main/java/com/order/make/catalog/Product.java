@@ -23,9 +23,10 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false, unique = true, length = 50)
 	private String code; // ITEM-STELL-01
 
+	@Column(nullable = false, length = 100)
 	private String name; // 강철
 
 	@Enumerated(EnumType.STRING)
@@ -33,18 +34,20 @@ public class Product {
 	private ProductType type;
 
 
-	@Column(nullable = false)
+	@Column(nullable = false, precision = 15, scale = 2)
 	private BigDecimal price; // 단가
 
 	@Column(nullable = false)
 	private Integer stockQuantity; // 재고
 
-	@Column
-	private String makeToOrder; // 주문생산여부
+	@Column(nullable = false)
+	@Builder.Default
+	private Boolean makeToOrder = Boolean.FALSE; // 주문생산여부
 
 	@Column
-	private Boolean standardProcessTime; // 표준 생산 시간
+	private Integer standardProcessTimeMinutes; // 표준 생산 시간(분)
 
-	@Column
-	private Boolean isActive;
+	@Column(nullable = false)
+	@Builder.Default
+	private Boolean isActive = Boolean.TRUE;
 }

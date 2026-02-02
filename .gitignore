@@ -1,0 +1,38 @@
+# OS & misc
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.idea/
+*.iml
+.vscode/
+
+# Environment & secrets
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+logs/
+
+# Java / Gradle (backend)
+.gradle/
+**/build/
+backend/out/
+
+# Node (frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Python (ml-service)
+ml-service/.venv/
+ml-service/venv/
+ml-service/__pycache__/
+ml-service/.mypy_cache/
+
+# Coverage & reports
+coverage/
+*.lcov
+
